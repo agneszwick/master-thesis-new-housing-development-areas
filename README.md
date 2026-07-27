@@ -21,38 +21,100 @@ This project develops a reproducible workflow to identify new housing developmen
 
 
 # Workflow
-## 1. Preprocessing (01_Preprocessing)
-### 1.1 3D-Building Model (01_3D_Building_Model)
-`01_bulk_download.ipynb`
 
-`02_gml_to_gpkg.ipynb`
+This repository contains the complete workflow used to identify, characterize, and analyse New Housing Development Areas (NHDAs) in Bavaria.
 
-`03_merge_gpkg.ipynb`
+---
 
-`04_classify_LoD2_buildings.ipynb`
+## 1. Preprocessing (`01_Preprocessing`)
 
-`05_residential_subclassification.ipynb`
+### 1.1 3D Building Model (`01_3D_Building_Model`)
 
-`06_detect_new_buildings.ipynb`
+`01_bulk_download.ipynb`  
+Download Bavarian LoD1 (2015) and LoD2 (2025) building models from the Bavarian Open Data portal.
 
-`07_accuracy_assessment_residential_subtypes.ipynb`
+`02_gml_to_gpkg.ipynb`  
+Convert downloaded CityGML files to GeoPackage format.
 
-### 1.2 Environmental Data (02_Environmental_Data)
- Note: Sentinel-2 processed on LRZ-terraybte; Landsat 8/9 on Google Earth Engine.
+`03_merge_gpkg.ipynb`  
+Merge individual GeoPackages into statewide datasets.
 
-`01_Sentinel_NDVI.ipynb`
+`04_classify_LoD2_buildings.ipynb`  
+Assign building function classes to LoD2 buildings.
 
- `02_Landsat_LST.txt`
+`05_residential_subclassification.ipynb`  
+Subclassify residential buildings into residential building types.
 
-### 1.3 Additional (03_Additional)
+`06_detect_new_buildings.ipynb`  
+Identify buildings constructed between 2015 and 2025 by comparing LoD1 and LoD2 datasets.
 
-`01_Download_Census_data.R`
+`07_accuracy_assessment_residential_subtypes.ipynb`  
+Assess the accuracy of the residential building subtype classification.
 
-`02_CORINE_preprocessing.ipynb`
+---
 
+### 1.2 Environmental Data (`02_Environmental_Data`)
 
-## 2. Detection of New Housing Development Areas
+**Note:** Sentinel-2 processing was performed on the LRZ Terrabyte platform, while Landsat 8/9 processing was carried out using Google Earth Engine.
+
+`01_Sentinel_NDVI.ipynb`  
+Generate annual Sentinel-2 NDVI composites.
+
+`02_Landsat_LST.txt`  
+Google Earth Engine script to generate annual Landsat 8/9 Land Surface Temperature (LST) composites.
+
+---
+
+### 1.3 Additional (`03_Additional`)
+
+`01_Download_Census_data.R`  
+Download 2022 German Census data.
+
+`02_CORINE_preprocessing.ipynb`  
+Preprocess CORINE Land Cover data.
+
+---
+
+## 2. Detection of New Housing Development Areas (`02_NHDA_Detection`)
+
+`00_filter_ATKIS.ipynb`  
+Prepare residential settlement areas from ATKIS.
+
+`01_NHDA_min_1_new_building.ipynb`  
+Generate candidate NHDAs containing at least one newly constructed residential building.
+
+`02a_threshold_ratio_old_vs_new.ipynb`  
+Evaluate the ratio of existing to new buildings within candidate areas.
+
+`02b_NHDA_ratio_old_vs_new.ipynb`  
+Filter candidate areas based on the selected building ratio threshold.
+
+`03_classify_dominant_building_type.ipynb`  
+Assign the dominant residential building type to each NHDA.
+
+`04a_threshold_WSF_coverage.ipynb`  
+Evaluate World Settlement Footprint (WSF) coverage to remove false-positive development areas.
+
+---
+
 ## 3. Construction Start Time Estimation
+
+*Scripts for estimating construction start years using Sentinel-2 NDVI time series and a Random Forest classifier.*
+
+---
+
 ## 4. Definition of Reference Areas
+
+*Scripts for generating matched reference areas for each NHDA.*
+
+---
+
 ## 5. Assignment of Contextual Variables
-## 6. Statistical Analysis of Urban Morphology-Environment Relationships
+
+*Scripts for calculating environmental indicators, urban morphology metrics, demographic characteristics, and surrounding land cover.*
+
+---
+
+## 6. Statistical Analysis of Urban Morphology–Environment Relationships
+
+*Scripts for exploratory analysis, linear mixed models, generalized additive models, and causal mediation analysis.*
