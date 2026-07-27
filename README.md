@@ -14,8 +14,7 @@ This project develops a reproducible workflow to identify new housing developmen
 - ATKIS: https://geodaten.bayern.de/opengeodata/OpenDataDetail.html?pn=atkis_basis_dlm
 - World Settlement Footprint: https://geoservice.dlr.de/data-assets/6n5h1ezef920.html
 ## Auxiliary Data
-
-- 
-
+- Landcover: 
+- Degree of Urbanisation: https://ec.europa.eu/eurostat/web/gisco/geodata/population-distribution/degree-urbanisation
 
 # Workflow
