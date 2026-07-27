@@ -5,7 +5,8 @@ This project develops a reproducible workflow to identify new housing developmen
 
 # Input Data
 ## Environmental Data: 
-
+- Sentinel-2 L3: https://geoservice.dlr.de/data-assets/4hcq6dgkj648.html
+- Landsat LST: https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2?hl=de
 
 ## Settlement Data
 - 3D Building Model: https://geodaten.bayern.de/opengeodata/OpenDataDetail.html?pn=lod2
