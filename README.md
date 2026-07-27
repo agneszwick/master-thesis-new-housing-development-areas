@@ -21,9 +21,12 @@ This project develops a reproducible workflow to identify new housing developmen
 
 
 # Workflow
-## 1. Preprocessing
-### 3D-building model
-`01_bulk_download.ipynb`
+## 1. Preprocessing (01_Preprocessing)
+### 1.1 3D- Building Model (01_3D_building model)
+`01_bulk_download.ipynb`\n
+`02_gml_to_gpkg.ipynb`
+
+
 ## 2. Detection of New Housing Development Areas
 ## 3. Construction Start Time Estimation
 ## 4. Definition of Reference Areas
