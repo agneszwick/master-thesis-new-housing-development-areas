@@ -43,7 +43,13 @@ This project develops a reproducible workflow to identify new housing developmen
 `01_Sentinel_NDVI.ipynb`
 
  `02_Landsat_LST.txt`
- 
+
+### 1.3 Additional (03_Additional)
+
+`01_Download_Census_data.R`
+
+`02_CORINE_preprocessing.ipynb`
+
 
 ## 2. Detection of New Housing Development Areas
 ## 3. Construction Start Time Estimation
