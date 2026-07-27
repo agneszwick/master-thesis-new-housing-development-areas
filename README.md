@@ -122,13 +122,37 @@ For each NHDA, identifies a nearby reference area (RA) within ATKIS residential 
 Evaluates how the distance between each NHDA and its matched reference area influences the environmental comparison by assessing changes in the environmental indicators across different search radii.
 
 ---
+## 5. Comparison NHDA vs. RA (`05_Comparison_NHDA_RA`)
 
-## 5. Assignment of Contextual Variables
+`01_comparison_LST.ipynb`  
+Calculate annual summer Land Surface Temperature (LST) statistics for each NHDA and its corresponding reference area.
 
-*Scripts for calculating environmental indicators, urban morphology metrics, demographic characteristics, and surrounding land cover.*
+`02_comparison_NDVI.ipynb`  
+Calculate annual growing-season NDVI statistics for each NHDA and its corresponding reference area.
+
+`03_merge_LST_and_NDVI.ipynb`  
+Merge the annual LST and NDVI comparison datasets into a single GeoPackage.
+
+`04_NHDA_RA_with_DEGURBA.ipynb`  
+Assign the DEGURBA class to each NHDA and reference area.
+
+`05_NHDA_RA_with_CLC.ipynb`  
+Assign the dominant CORINE Land Cover (CLC) class within the surrounding buffer of each NHDA and reference area.
+
+`06_NHDA_RA_LoD2.ipynb`  
+Calculate urban morphology metrics (e.g. building density, building height, building footprint, built-up ratio and building volume density) for each NHDA and reference area using the LoD2 building model.
+
+`07_NHDA_RA_BuildingStructure_Difference.ipynb`  
+Calculate difference in residential building type share and calculate relative differences of the urban morphology metrics.
+
+`08_NHDA_RA_Census.ipynb`  
+Calculate population density in NHDA and RA and dominant heating source.
+
+`09_analyze_LST_NDVI_pre_post_construction.ipynb`  
+annual pre- and post-construction environmental indicators relative to the estimated construction start year.
 
 ---
 
-## 6. Statistical Analysis of Urban Morphology–Environment Relationships
+## 6. Statistical Analysis of Urban Morphology–Environment Relationships (`06_Statistical_Analysis`)
 
-*Scripts for exploratory analysis, linear mixed models, generalized additive models, and causal mediation analysis.*
+*Scripts for exploratory data analysis (EDA), correlation analyses, linear mixed-effects models (LMMs), generalized additive models (GAMs), and causal mediation analysis.*
