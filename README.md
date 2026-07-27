@@ -114,6 +114,11 @@ Assess the accuracy of the construction start year estimation using an independe
 
 ## 4. Definition of Reference Areas (04_Reference_Area)
 
+`01_detect_reference_area.ipynb`  
+For each NHDA, identifies a nearby reference area (RA) within ATKIS residential settlement polygons (classes 41001 and 41006). Reference areas are matched to the NHDA in area (±20%) and must have a new-to-total building footprint ratio of ≤0.1, ensuring that at least 90% of the building footprint area consists of pre-existing buildings.
+
+`02_sensitivity_analysis_RA.ipynb`  
+Evaluates how the distance between each NHDA and its matched reference area influences the environmental comparison by assessing changes in the environmental indicators across different search radii.
 
 ---
 
