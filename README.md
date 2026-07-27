@@ -149,7 +149,7 @@ Calculate difference in residential building type share and calculate relative d
 Calculate population density in NHDA and RA and dominant heating source.
 
 `09_analyze_LST_NDVI_pre_post_construction.ipynb`  
-annual pre- and post-construction environmental indicators relative to the estimated construction start year.
+Analyzes yearly LST and NDVI differences between new housing development areas and reference areas before and after construction start, including temporal trajectories, significance tests, and percentile-limited visualizations.
 
 ---
 
