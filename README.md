@@ -110,6 +110,7 @@ Apply the trained Random Forest model to estimate the construction start year fo
 
 `03_accuracy_assessment.ipynb`  
 Assess the accuracy of the construction start year estimation using an independent validation dataset.
+
 ---
 
 ## 4. Definition of Reference Areas (04_Reference_Area)
