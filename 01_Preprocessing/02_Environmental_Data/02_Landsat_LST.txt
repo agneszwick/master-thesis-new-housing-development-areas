@@ -1,0 +1,107 @@
+/**This script calculates the annual median summer land surface temperature for Bavaria from Landsat 8 and 9 Level-2 data. 
+Cloud-, shadow-, cirrus-, and snow-affected pixels are masked before the June–August median images are exported as GeoTIFF files. **/
+
+/** LANDSAT 8/9 L2 ANNUAL SUMMER MEDIAN LST FOR BAVARIA **/
+
+var startYear = 2015;
+var endYear = 2026;
+
+var exportFolder = 'Master_LST';
+
+var administrativeUnits = ee.FeatureCollection(
+  'projects/ee-agneszwick98/assets/VG250_KRS'
+);
+
+var bavaria = administrativeUnits
+  .filter(ee.Filter.stringStartsWith('ARS', '09'))
+  .geometry()
+  .dissolve();
+
+Map.centerObject(bavaria, 7);
+Map.addLayer(bavaria, {}, 'Bavaria', true);
+
+// ======================
+// Cloud and shadow mask
+// ======================
+function maskLandsatL2(img) {
+  var qa = img.select('QA_PIXEL');
+
+  var mask = qa.bitwiseAnd(1 << 3).eq(0)    // Clouds
+    .and(qa.bitwiseAnd(1 << 4).eq(0))       // Cloud shadows
+    .and(qa.bitwiseAnd(1 << 2).eq(0))       // Cirrus
+    .and(qa.bitwiseAnd(1 << 5).eq(0));      // Snow
+
+  var lstCelsius = img.select('ST_B10')
+    .multiply(0.00341802)
+    .add(149.0)
+    .subtract(273.15)
+    .rename('LST_Landsat_C');
+
+  return lstCelsius
+    .updateMask(mask)
+    .copyProperties(img, ['system:time_start']);
+}
+
+// ======================
+// Annual image collection
+// ======================
+function getLandsatCollection(year) {
+  var startDate = ee.Date.fromYMD(year, 6, 1);
+  var endDate = ee.Date.fromYMD(year, 9, 1); // June to August
+
+  var l8 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+    .filterDate(startDate, endDate)
+    .filterBounds(bavaria);
+
+  var l9 = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
+    .filterDate(startDate, endDate)
+    .filterBounds(bavaria);
+
+  return l8.merge(l9).map(maskLandsatL2);
+}
+
+// ======================
+// Visualization settings
+// ======================
+var visLST = {
+  min: 15,
+  max: 45,
+  palette: [
+    '313695', '4575b4', '74add1', 'abd9e9',
+    'ffffbf',
+    'fdae61', 'f46d43', 'd73027', 'a50026'
+  ]
+};
+
+// ======================
+// Calculate and export annual median images
+// ======================
+for (var year = startYear; year <= endYear; year++) {
+  var collection = getLandsatCollection(year);
+
+  print('Landsat scenes JJA ' + year, collection.size());
+
+  var lstMedian = collection
+    .median()
+    .clip(bavaria)
+    .rename('Landsat_LST_median_JJA_' + year);
+
+  Map.addLayer(
+    lstMedian,
+    visLST,
+    'Landsat LST Median JJA ' + year,
+    false
+  );
+
+  Export.image.toDrive({
+    image: lstMedian,
+    description: 'Landsat89_L2_LST_JJA_Median_Bavaria_' + year,
+    folder: exportFolder,
+    fileNamePrefix: 'Landsat89_L2_LST_JJA_Median_Bavaria_' + year,
+    region: bavaria,
+    scale: 30,
+    crs: 'EPSG:25832',
+    maxPixels: 1e13,
+    fileFormat: 'GeoTIFF'
+  });
+}
