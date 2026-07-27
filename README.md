@@ -22,7 +22,7 @@ This project develops a reproducible workflow to identify new housing developmen
 
 # Workflow
 ## 1. Preprocessing (01_Preprocessing)
-### 1.1 3D- Building Model (01_3D_building model)
+### 1.1 3D-Building Model (01_3D_Building_Model)
 `01_bulk_download.ipynb`
 
 `02_gml_to_gpkg.ipynb`
@@ -36,6 +36,14 @@ This project develops a reproducible workflow to identify new housing developmen
 `06_detect_new_buildings.ipynb`
 
 `07_accuracy_assessment_residential_subtypes.ipynb`
+
+### 1.2 Environmental Data (02_Environmental_Data)
+ Note: Sentinel-2 processed on LRZ-terraybte; Landsat 8/9 on Google Earth Engine.
+
+`01_Sentinel_NDVI.ipynb`
+
+ `02_Landsat_LST.txt`
+ 
 
 ## 2. Detection of New Housing Development Areas
 ## 3. Construction Start Time Estimation
