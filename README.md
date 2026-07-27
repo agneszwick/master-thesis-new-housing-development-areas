@@ -18,4 +18,12 @@ This project develops a reproducible workflow to identify new housing developmen
 - Degree of Urbanisation: https://ec.europa.eu/eurostat/web/gisco/geodata/population-distribution/degree-urbanisation
 - Census: Lieth J (2026). z22: Official Gridded Data from the German Census 2022. doi:10.32614/CRAN.package.z22. https://github.com/jslth/z22/.
 - Natura-2000: https://www.stmuv.bayern.de/themen/naturschutz/schutzgebiete/natura2000/index.htm
+
+
 # Workflow
+## 1. Preprocessing
+## 2. Detection of New Housing Development Areas
+## 3. Construction Start Time Estimation
+## 4. Definition of Reference Areas
+## 5. Assignment of Contextual Variables
+## 6. Statistical Analysis of Urban Morphology-Environment Relationships
