@@ -97,20 +97,19 @@ Evaluate World Settlement Footprint (WSF) coverage to remove false-positive deve
 
 ---
 
-## 3. Construction Start Time Estimation (03_Construction_Start_Estimation)
+## 3. Construction Start Time Estimation (`03_Construction_Start_Estimation`)
 
 `00_random_nhda_for_trainingsdata.ipynb`  
-Select random NHDAs for training sample.
+Select a random sample of NHDAs for manual construction year annotation.
 
 `01_random_forest_based_on_trainingsdata.ipynb`  
-Create RF-model based on trainingsdata.
+Train and optimize the Random Forest model using manually labelled training data.
 
 `02_apply_random_forest_model.ipynb`  
-Apply RF-model.
+Apply the trained Random Forest model to estimate the construction start year for all NHDAs.
 
 `03_accuracy_assessment.ipynb`  
-Accuracy assessment of random forest model.
-
+Assess the accuracy of the construction start year estimation using an independent validation dataset.
 ---
 
 ## 4. Definition of Reference Areas (04_Reference_Area)
