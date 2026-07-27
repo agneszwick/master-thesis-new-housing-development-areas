@@ -27,6 +27,15 @@ This project develops a reproducible workflow to identify new housing developmen
 
 `02_gml_to_gpkg.ipynb`
 
+`03_merge_gpkg.ipynb`
+
+`04_classify_LoD2_buildings.ipynb`
+
+`05_residential_subclassification.ipynb`
+
+`06_detect_new_buildings.ipynb`
+
+`07_accuracy_assessment_residential_subtypes.ipynb`
 
 ## 2. Detection of New Housing Development Areas
 ## 3. Construction Start Time Estimation
