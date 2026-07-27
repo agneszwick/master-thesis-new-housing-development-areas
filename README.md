@@ -99,8 +99,17 @@ Evaluate World Settlement Footprint (WSF) coverage to remove false-positive deve
 
 ## 3. Construction Start Time Estimation
 
-*Scripts for estimating construction start years using Sentinel-2 NDVI time series and a Random Forest classifier.*
+`00_random_nhda_for_trainingsdata.ipynb`  
+Select random NHDAs for training sample.
 
+`01_random_forest_based_on_trainingsdata.ipynb`  
+Create RF-model based on trainingsdata.
+
+`02_apply_random_forest_model.ipynb`  
+Apply RF-model.
+
+`03_accuracy_assessment.ipynb`  
+Accuracy assessment of random forest model.
 ---
 
 ## 4. Definition of Reference Areas
