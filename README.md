@@ -31,7 +31,7 @@ This repository contains the complete workflow used to identify, characterize, a
 ### 1.1 3D Building Model (`01_3D_Building_Model`)
 
 `01_bulk_download.ipynb`  
-Download Bavarian LoD1 (2015) and LoD2 (2025) building models from the Bavarian Open Data portal.
+Download Bavarian LoD2 (2025) building model from the Bavarian Open Data portal.
 
 `02_gml_to_gpkg.ipynb`  
 Convert downloaded CityGML files to GeoPackage format.
