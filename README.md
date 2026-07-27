@@ -155,4 +155,8 @@ Analyzes yearly LST and NDVI differences between new housing development areas a
 
 ## 6. Statistical Analysis of Urban Morphology–Environment Relationships (`06_Statistical_Analysis`)
 
-*Scripts for exploratory data analysis (EDA), correlation analyses, linear mixed-effects models (LMMs), generalized additive models (GAMs), and causal mediation analysis.*
+01_prepare_data
+02_exploratory_data_analysis
+03_LMM_NDVI
+04_LMM_LST
+05_SCM
