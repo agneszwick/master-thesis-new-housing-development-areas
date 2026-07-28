@@ -184,3 +184,8 @@ This script fits linear mixed-effects models to assess the influence of urban mo
 **Structural Causal Mediation Analysis**
 
 This script performs a structural causal mediation analysis to quantify how urban morphology affects changes in land surface temperature (ΔLST), distinguishing between direct effects and indirect effects mediated by changes in vegetation (ΔNDVI). Sensitivity analyses are included to assess the robustness of the mediation results.
+
+---
+
+## 7. Figures (`06_Figures`)
+
