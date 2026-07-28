@@ -92,7 +92,7 @@ Filter candidate areas based on the selected building ratio threshold.
 `03_classify_dominant_building_type.ipynb`  
 Assign the dominant residential building type to each NHDA.
 
-`04a_threshold_WSF_coverage.ipynb`  
+`04_threshold_WSF_coverage.ipynb`  
 Evaluate World Settlement Footprint (WSF) coverage to remove false-positive development areas.
 
 ---
