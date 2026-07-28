@@ -155,31 +155,31 @@ Analyzes yearly LST and NDVI differences between new housing development areas a
 
 ## 6. Statistical Analysis of Urban Morphology–Environment Relationships (`06_Statistical_Analysis`)
 
-### `01_prepare_data.ipynb`
+`01_prepare_data.ipynb`
 
 **Data Preparation and Cleaning**
 
 This script prepares the final analysis dataset by merging the NHDA attributes with construction start years, filtering NHDA features, reshaping environmental variables from wide to long format, deriving analysis variables (e.g., years since construction start), restricting observations to the first nine years after construction, and performing data quality checks.
 
-### `02_exploratory_data_analysis.ipynb`
+`02_exploratory_data_analysis.ipynb`
 
 **Exploratory Data Analysis**
 
 This script performs a comprehensive exploratory data analysis (EDA) of the NHDA analysis dataset by generating descriptive statistics, distribution plots, boxplots, scatterplots, correlation matrices, multicollinearity (VIF) diagnostics, and association analyses between numerical and categorical variables.
 
-### `03_LMM_NDVI.ipynb`
+`03_LMM_NDVI.ipynb`
 
 **Linear Mixed Model for NDVI**
 
 This script fits linear mixed-effects models to quantify the influence of urban morphology on relative NDVI differences between NHDAs and their reference areas. The models include built-form characteristics as main predictors and control for temporal, spatial, and contextual confounders. All continuous predictors are standardized using z-score transformation to facilitate comparison of effect sizes.
 
-### `04_LMM_LST.ipynb`
+`04_LMM_LST.ipynb`
 
 **Linear Mixed Model for LST**
 
 This script fits linear mixed-effects models to assess the influence of urban morphology and vegetation (ΔNDVI) on relative LST differences between NHDAs and their reference areas. The models account for temporal, spatial, and contextual confounders, while all continuous predictors are standardized using z-score transformation to enable direct comparison of effect sizes.
 
-### `05_scm_mediation_analysis.R`
+`05_scm_mediation_analysis.R`
 
 **Structural Causal Mediation Analysis**
 
