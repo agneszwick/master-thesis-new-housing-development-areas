@@ -224,3 +224,16 @@ Visualizes the dominant residential building types of NHDAs and reference areas 
 Illustrates the temporal development of environmental conditions (LST and NDVI) for an example NHDA throughout the observation period.
 
 --- 
+
+# Results
+
+This folder contains the main datasets generated during the analysis.
+
+- **analysis_df.csv** – Final analysis dataset used for the Linear Mixed Models (LMMs) and Structural Causal Mediation (SCM) analyses. It contains the environmental outcomes, development characteristics, contextual variables, and all covariates used in the statistical models.
+
+- **NHDA.gpkg** – Spatial dataset of all identified New Housing Development Areas (NHDAs), including the estimated construction start year and development characteristics.
+
+- **Reference_Area.gpkg** – Spatial dataset containing the matched reference areas (RAs) used for comparison with the NHDAs.
+
+- **Comparison_LST_NDVI_DEGURB_CLC_BuildingStructure_Differences_Census.gpkg** – Comprehensive spatial dataset combining NHDA and RA information, including environmental indicators (LST, NDVI), urban morphology, building characteristics, Census 2022 variables, DEGURBA classes, surrounding land cover (CLC), and derived comparison metrics between NHDA and RA.
+
