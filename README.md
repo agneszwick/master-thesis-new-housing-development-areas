@@ -231,7 +231,7 @@ This folder contains the main datasets generated during the analysis.
 
 - **analysis_df.csv** – Final analysis dataset used for the Linear Mixed Models (LMMs) and Structural Causal Mediation (SCM) analyses. It contains the environmental outcomes, development characteristics, contextual variables, and all covariates used in the statistical models.
 
-- **NHDA.gpkg** – Spatial dataset of all identified New Housing Development Areas (NHDAs), including the estimated construction start year and development characteristics.
+- **NHDA.gpkg** – Spatial dataset of all identified New Housing Development Areas (NHDAs), including the estimated construction start year.
 
 - **Reference_Area.gpkg** – Spatial dataset containing the matched reference areas (RAs) used for comparison with the NHDAs.
 
