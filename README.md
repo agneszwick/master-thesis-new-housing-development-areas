@@ -187,5 +187,5 @@ This script performs a structural causal mediation analysis to quantify how urba
 
 ---
 
-## 7. Figures (`06_Figures`)
+## 7. Figures (`07_Figures`)
 
